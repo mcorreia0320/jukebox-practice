@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  
-
   class Jukebox {
-
     songs = [
       {
         id: 1,
@@ -57,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     queue = [];
-    
+
     play() {
       if (this.queue.length >= 4) {
         let firstSongPlayed = this.queue.shift();
@@ -98,15 +95,12 @@ document.addEventListener("DOMContentLoaded", function () {
       currentMusic.name
     } - ${currentMusic.autors.join(", ")}`;
 
-  let lastMusic =
-      queue.length > 1 ? queue[queue.length - 2] : 0;
+    let lastMusic = queue.length > 1 ? queue[queue.length - 2] : 0;
 
-      if (lastMusic !== 0) {
-        $(`#song-${lastMusic.id}`).classList.remove("selectedMusic");
-      }
-  
-      $(`#song-${currentMusic.id}`).classList.add("selectedMusic");
+    if (lastMusic !== 0) {
+      $(`#song-${lastMusic.id}`).classList.remove("selectedMusic");
+    }
+
+    $(`#song-${currentMusic.id}`).classList.add("selectedMusic");
   });
-
-  
 });
